@@ -12,14 +12,17 @@ class LinkedList:
         return data
     def empty(self):
         return not self._begin
-class AnalyseBraces:
-    def __init__(self, L, R):
-        self.Left = L
-        self.Right = R
+class SmileChecker:
+    def __init__(self):
+        self.Left = [':-(', ':-[', ':-{', ':-<']
+        self.Right = [':-)', ':-]', ':-}', ':->']
         self.pair = dict(zip(self.Left, self.Right))
+        self.list = []
         self.stack = LinkedList()
-    def checking(self, s):
-        for brace in s:
+    def append_smile(self,data):
+        self.list.append(data)
+    def check_correct(self):
+        for brace in self.list:
             if brace in self.Left:
                 self.stack.push_front(brace)
             elif brace in self.Right:
@@ -28,6 +31,3 @@ class AnalyseBraces:
                 if self.pair[self.stack.pop_front()] != brace:
                     return False
         return self.stack.empty()
-
-Checker = AnalyseBraces(['(','[','{'],[')',']','}'])
-print(Checker.checking(input()))

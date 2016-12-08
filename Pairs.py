@@ -6,6 +6,8 @@ while In != [0,0]:
     In = list(map(int,input().split()))
 k = 0
 for p in A:
-    if p[0] % 3 == 0 and p[1] % 2 == 0 or (p[0] % 9 == 0 and p[1] % 9 == 0):
+    if (p[0] % 3 == 0 and p[1] % 2 == 0 and p[1] % 3 != 0) or (p[0] % 9 == 0 and p[1] % 9 == 0):
+        k+=1
+    elif (p[0] % 2 == 0 and p[1] % 3 == 0 and p[0] % 3 != 0) or (p[0] % 9 == 0 and p[1] % 9 == 0):
         k+=1
 print(k)

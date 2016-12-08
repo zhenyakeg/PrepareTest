@@ -7,8 +7,8 @@ def get_next():
     if get_next.seed == 0:
         return 0
     else:
-        return (get_next.seed**2+3*get_next.seed)%999+1
-    get_next.seed = int(input())
+        return (get_next.seed**2%100000 + 1)
+get_next.seed = int(input())
 
 x = get_next()
 M = 0

@@ -1,5 +1,5 @@
 def Hanoi(n,i=1,k=3):
-    if (i == 2 and k == 3) or (i == 3 and k == 2):
+    if (i == 1 and k == 3) or (i == 3 and k == 1):
         tmp = 6- i- k
         Hanoi(n,i,tmp)
         Hanoi(n,tmp,k)
