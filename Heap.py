@@ -35,6 +35,6 @@ def heap_sort(A):
         H.heap_push(x)
     for i in range(len(A)):
         A[i] = H.heap_pop()
-A = [4, 5, 2, 5, 3]
+A = [445, 55, 34, 5, 2, 3, 3, 5, 4, 8, 2, 13, 8, 2, 1]
 heap_sort(A)
 print(A)
